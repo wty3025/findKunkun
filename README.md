@@ -7,7 +7,7 @@
 
 |下载二维码|赞赏码(觉得不错打个赏) |
 | :------: | :------: |
-<img src="https://share-1309976108.cos.ap-guangzhou.myqcloud.com/%E5%9B%BE%E7%89%87/%E6%89%BE%E5%9D%A4%E5%9D%A4.png" width="200px">| <img src="https://share-1309976108.cos.ap-guangzhou.myqcloud.com/%E5%9B%BE%E7%89%87/%E8%B5%9E%E8%B5%8F%E7%A0%81.png" width="200px"> | 
+<img src="https://s1.ax1x.com/2022/10/09/xJpLHf.png" width="200px">| <img src="https://s1.ax1x.com/2022/10/09/xJp44e.png" width="200px"> | 
 
 ## 版本
 
