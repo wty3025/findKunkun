@@ -28,9 +28,7 @@
         android:layout_height="50dp"
         android:layout_alignParentRight="true"
         android:background="@drawable/skip"
-        android:onClick="jump"
-
-        />
+        android:onClick="jump" />
 
 
     <Button
