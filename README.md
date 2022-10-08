@@ -7,7 +7,7 @@
 
 |下载二维码|赞赏码(觉得不错打个赏) |
 | :------: | :------: |
-<img src="main/res/drawable/找坤坤.png" width="200px">| <img src="main/res/drawable/赞赏码.png" width="200px"> | 
+<img src="/main/res/drawable/找坤坤.png" width="200px">| <img src="main/res/drawable/赞赏码.png" width="200px"> | 
 
 ## 版本
 
