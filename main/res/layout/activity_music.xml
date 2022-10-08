@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <!--停止播放控件-->
+    <Button
+        android:id="@+id/btn_stop"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="停止播放"
+        android:textSize="20dp"
+        android:layout_alignParentRight="true"
+        android:onClick="stopMusic"
+        android:layout_marginTop="100dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <!--游戏音乐-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".MusicActivity">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="25dp"
+                    android:layout_marginTop="10pt"
+                    android:text="距离坤坤由远到近的叫声速度" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/gameMusic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            </RelativeLayout>
+
+
+
+            <!--鸡音盒音乐-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".MusicActivity">
+
+                <TextView
+                    android:id="@+id/jiBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/gameMusic2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

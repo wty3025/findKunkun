@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SuccessFindKunkun">
+
+    <TextView
+        android:id="@+id/gameover1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="恭喜你找到坤坤"
+        android:textColor="@color/red"
+        android:layout_marginTop="200dp"
+        android:textSize="45dp" />
+
+    <TextView
+        android:id="@+id/gameover2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="你已经是一名合格的ikun啦"
+        android:textColor="@color/red"
+        android:layout_marginTop="50dp"
+        android:textSize="28dp" />
+
+
+    <Button
+        android:id="@+id/success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"
+        android:onClick="reStart"
+        android:text="重新开始"
+        tools:ignore="OnClick" />
+
+</LinearLayout>
