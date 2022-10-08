@@ -9,4 +9,10 @@
 | :------: | :------: |
 <img src="main/res/drawable/找坤坤.png" width="200px">| <img src="main/res/drawable/赞赏码.png" width="200px"> | 
 
+## 版本
+
+## v3.0.0 2022-10-09
+
+### 修复问题
+加快广告加载速度
 
