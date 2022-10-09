@@ -7,7 +7,7 @@
 
 |下载二维码|赞赏码(觉得不错打个赏) |
 | :------: | :------: |
-<img src="https://s1.ax1x.com/2022/10/09/xJpLHf.png" width="200px">| <img src="https://s1.ax1x.com/2022/10/09/xJp44e.png" width="200px"> | 
+<img src="https://pic1.imgdb.cn/item/6342fc5816f2c2beb1875f18.png" width="200px">| <img src="https://pic1.imgdb.cn/item/6342fc5816f2c2beb1875f0f.png" width="200px"> | 
 
 ## 版本
 
