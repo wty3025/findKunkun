@@ -14,35 +14,32 @@
         android:gravity="center" >
 
         <VideoView
-            android:id="@+id/videoNiganma"
+            android:id="@+id/videoAdvert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </RelativeLayout>
 
-
-
     <ImageButton
-        android:id="@+id/pass"
+        android:id="@+id/image_jumpAdvert"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentRight="true"
         android:background="@drawable/skip"
-        android:onClick="jump" />
-
+        android:onClick="jumpAdvert" />
 
     <Button
-        android:id="@+id/pass2"
+        android:id="@+id/btn_nextAdvert"
         android:layout_width="50dp"
         android:layout_height="32dp"
         android:layout_marginTop="9dp"
+        android:layout_toLeftOf="@+id/image_jumpAdvert"
         android:background="@drawable/shape"
-        android:layout_toLeftOf="@+id/pass"
-        android:onClick="next"
+        android:backgroundTint="@color/yellow_real"
         android:text="Next"
-        android:backgroundTint="#FFEB3B"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:onClick="nextAdvert" />
 
 </RelativeLayout>

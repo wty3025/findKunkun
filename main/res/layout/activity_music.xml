@@ -1,95 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
-    <!--停止播放控件-->
-    <Button
-        android:id="@+id/btn_stop"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="停止播放"
-        android:textSize="20dp"
-        android:layout_alignParentRight="true"
-        android:onClick="stopMusic"
-        android:layout_marginTop="100dp" />
-
-
-    <ScrollView
+    <!--返回键 + 坤言坤语 + 停止键-->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:layout_height="50dp">
+
+        <ImageButton
+            android:id="@+id/btn_backToMain"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="backToMain"
+            android:background="@drawable/back" />
 
 
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_jiBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="坤言坤语"
+            android:textSize="25dp" />
 
 
-            <!--游戏音乐-->
+        <ImageButton
+            android:id="@+id/imbtn_musicAllStop"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/stop"
+            android:backgroundTint="@color/red"
+            android:onClick="stopMusic" />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:id="@+id/sv_slide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                tools:context=".MusicActivity">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
+
+                <!--游戏音乐-->
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textSize="25dp"
-                    android:layout_marginTop="10pt"
-                    android:text="距离坤坤由远到近的叫声速度" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/jiTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10pt"
+                        android:gravity="center"
+                        android:text="距离坤坤由远到近的叫声速度"
+                        android:textSize="25dp" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/gameMusic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </RelativeLayout>
+
+
+                <!--鸡音盒音乐-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/jiBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:textSize="25dp" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/gameMusic2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:id="@+id/moreGame"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="更多游戏请扫码"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/money"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="觉得不错就打个赏吧"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/image_download"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/download"
+                        android:onClick="downloadGame" />
+
+                    <ImageView
+                        android:id="@+id/image_money"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/zanshang" />
+                </LinearLayout>
 
             </LinearLayout>
 
 
-            <RelativeLayout
-                android:id="@+id/gameMusic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+        </ScrollView>
+    </RelativeLayout>
 
-            </RelativeLayout>
-
-
-
-            <!--鸡音盒音乐-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                tools:context=".MusicActivity">
-
-                <TextView
-                    android:id="@+id/jiBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:textSize="25dp" />
-
-            </LinearLayout>
-
-
-            <RelativeLayout
-                android:id="@+id/gameMusic2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
-
-            </RelativeLayout>
-
-
-
-        </LinearLayout>
-
-
-    </ScrollView>
-</RelativeLayout>
+</LinearLayout>

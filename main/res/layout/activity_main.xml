@@ -8,21 +8,25 @@
     tools:context=".MainActivity">
 
 
+    <ImageButton
+        android:id="@+id/imbtn_musicStop"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/music_play" />
+
     <ImageView
         android:id="@+id/image_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/image_title"
-        android:layout_gravity="center"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        />
-
-
+        android:layout_gravity="center" />
 
     <TextView
-        android:id="@+id/rule_self"
+        android:id="@+id/ruleTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -31,44 +35,43 @@
         android:textSize="25dp" />
 
     <TextView
-        android:id="@+id/rule_content"
+        android:id="@+id/ruleContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textSize="20dp"
-        android:text="请点击屏幕的任意位置，直到找到隐藏的蔡徐坤。点击的位置距离蔡徐坤越近，他的叫声越急促。" />
+        android:text="请点击屏幕的任意位置，直到找到隐藏的蔡徐坤。点击的位置距离蔡徐坤越近，他的叫声就越急促。" />
 
     <TextView
-        android:id="@+id/rule_tip"
+        android:id="@+id/ruleTip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textSize="20dp"
-        android:text="注意：请确保在你点击屏幕之前开启声音，并且声音越大，游戏体验就越好"
-        />
+        android:text="注意：请确保在你点击屏幕之前开启声音，并且声音越大，游戏体验就越好" />
 
     <Button
-        android:id="@+id/music"
+        android:id="@+id/btn_startGame"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="100dp"
         android:background="@drawable/shape"
-        android:onClick="musicKunkun"
-        android:text="鸡音盒" />
+        android:onClick="startGame"
+        android:text="寻找坤坤" />
 
     <Button
-        android:id="@+id/start"
+        android:id="@+id/btn_musicKun"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@drawable/shape"
-        android:onClick="startGame"
-        android:text="开始游戏" />
+        android:onClick="musicKun"
+        android:text="坤言坤语" />
 
 </LinearLayout>

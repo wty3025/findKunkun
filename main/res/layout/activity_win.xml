@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="坤坤游戏虽然好玩，但也要适度哦"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="达成成就"
+        android:textStyle="bold"
+        android:textColor="@color/red"
+        android:textSize="60dp" />
+
+    <TextView
+        android:id="@+id/watchNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center" />
+
+    <VideoView
+        android:id="@+id/doubleKun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp" />
+
+
+    <Button
+        android:id="@+id/btn_kunAdvert"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:onClick="kunAdvert"
+        android:text="坤坤视频"
+        android:background="@drawable/shape"
+        android:textSize="20dp" />
+
+
+    <Button
+        android:id="@+id/btn_backToHome"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backTo"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="backToHome"
+        android:text="返回首页"
+        android:background="@drawable/shape"
+        android:textSize="20dp" />
+
+
+</LinearLayout>

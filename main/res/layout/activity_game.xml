@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/touchScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+
+    <ImageButton
+        android:id="@+id/imbtn_backToMain"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/back"
+        android:onClick="backToMain" />
+
+    <ImageButton
+        android:id="@+id/imbtn_reStart"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@+id/imbtn_backToMain"
+        android:background="@drawable/restart"
+        android:onClick="reStart" />
+
+    <ImageButton
+        android:id="@+id/imbtn_playAdvert"
+        android:layout_width="30dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/imbtn_reStart"
+        android:background="@drawable/video"
+        android:onClick="playAdvert" />
+
+    <TextView
+        android:id="@+id/touchPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/image_cxk"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+
+</RelativeLayout>
