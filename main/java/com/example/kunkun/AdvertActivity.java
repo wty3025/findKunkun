@@ -3,13 +3,13 @@ package com.example.kunkun;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.VideoView;
 
 import java.io.BufferedReader;
@@ -20,13 +20,13 @@ import java.net.URL;
 
 
 public class AdvertActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advert);
 
-        VideoView videoView = findViewById(R.id.videoNiganma);
-
+        VideoView videoView = findViewById(R.id.videoAdvert);
 
         // 获取视频url真实链接并播放视频
         try {
@@ -49,6 +49,17 @@ public class AdvertActivity extends Activity {
             System.out.println(uri);
             videoView.setVideoURI(Uri.parse(uri));
             videoView.start();
+
+            SharedPreferences sp = getSharedPreferences("mrsoft", MODE_PRIVATE);
+            int watchNum = sp.getInt("watchNum", 0);
+            watchNum += 1;
+
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("watchNum", watchNum);
+            editor.commit();
+
+            System.out.println(watchNum);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,26 +69,25 @@ public class AdvertActivity extends Activity {
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                Intent intent = new Intent(AdvertActivity.this, SuccessFindKunkun.class);
+                Intent intent = new Intent(AdvertActivity.this, WinActivity.class);
                 startActivity(intent);
             }
         });
 
 
         // 调整透明度
-        Button btn_pass = findViewById(R.id.pass2);
-        btn_pass.getBackground().setAlpha(150);
-
+        Button btn_replayAdvert = findViewById(R.id.btn_nextAdvert);
+        btn_replayAdvert.getBackground().setAlpha(150);
     }
 
 
-    public void jump(View view) {
-        Intent intent = new Intent(AdvertActivity.this, SuccessFindKunkun.class);
+    public void jumpAdvert(View view) {
+        Intent intent = new Intent(this, WinActivity.class);
         startActivity(intent);
     }
 
-    public void next(View view) {
-        Intent intent = new Intent(AdvertActivity.this, AdvertActivity.class);
+    public void nextAdvert(View view) {
+        Intent intent = new Intent(this, AdvertActivity.class);
         startActivity(intent);
     }
 }

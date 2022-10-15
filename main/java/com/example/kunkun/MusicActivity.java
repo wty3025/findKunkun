@@ -3,12 +3,17 @@ package com.example.kunkun;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,7 +33,10 @@ import java.util.List;
 public class MusicActivity extends Activity {
 
     List<MediaPlayer> playingList = new ArrayList<>();  // 播放过的音频放入列表，为了一键停止播放功能
+    List<View> shining = new ArrayList<>();
     private static MediaPlayer mediaPlayer;
+    private static AlphaAnimation alphaAnimation;
+
 
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     @Override
@@ -37,13 +45,12 @@ public class MusicActivity extends Activity {
         setContentView(R.layout.activity_music);
 
 
-
 //        Button闪烁代码（暂时不需要）
-//        Animation alphaAnimation = new AlphaAnimation(1, 0);
-//        alphaAnimation.setDuration(1000);
-//        alphaAnimation.setInterpolator(new LinearInterpolator());
-//        alphaAnimation.setRepeatCount(Animation.INFINITE);
-//        alphaAnimation.setRepeatMode(Animation.REVERSE);
+        alphaAnimation = new AlphaAnimation(1, 0);
+        alphaAnimation.setDuration(500);
+        alphaAnimation.setInterpolator(new LinearInterpolator());
+        alphaAnimation.setRepeatCount(Animation.INFINITE);
+        alphaAnimation.setRepeatMode(Animation.REVERSE);
 
 
         // 第一批生成12个Button，配置相应参数，点击播放对应音频
@@ -74,7 +81,7 @@ public class MusicActivity extends Activity {
             relativeLayout.addView(btn1[i], btParams);   // 将按钮放入layout组件
         }
 
-        List music = new ArrayList();
+        ArrayList music = new ArrayList();
 
         try {
             // 代码的主线程中去访问网络，配置线程监控策略
@@ -121,7 +128,6 @@ public class MusicActivity extends Activity {
         }
 
 
-//        System.out.println(music);
 
         // 第二批Button控件，生成的Button数量由返回的 musicNum 数值决定（凑齐4的倍数）
         relativeLayout = (RelativeLayout) findViewById(R.id.gameMusic2);
@@ -183,22 +189,29 @@ public class MusicActivity extends Activity {
                     mediaPlayer.start();
                     playingList.add(mediaPlayer);
 
+                    view.startAnimation(alphaAnimation);
+                    shining.add(view);
 
-//                    Button停止闪烁代码（暂时不需要）
-//                    view.startAnimation(alphaAnimation);
-//
-//                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//                        @Override
-//                        public void onCompletion(MediaPlayer mediaPlayer) {
-//                            view.clearAnimation();
-//                        }
-//                    });
+                    SharedPreferences sp = getSharedPreferences("mrsoft", MODE_PRIVATE);
+                    int listenNum = sp.getInt("listenNum", 0);
+                    listenNum += 1;
+
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putInt("listenNum", listenNum);
+                    editor.commit();
+
+                    // Button停止闪烁代码（暂时不需要）
+
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            view.clearAnimation();
+                        }
+                    });
                 }
             });
         }
-
     }
-
 
 
     // 停止播放列表里所有音乐，并重置列表
@@ -206,10 +219,26 @@ public class MusicActivity extends Activity {
         for (int i = playingList.size() - 1; i >= 0; i--) {
             if (playingList.get(i).isPlaying()) {
                 playingList.get(i).stop();
+                shining.get(i).clearAnimation();
             }
             playingList.remove(i);
+            shining.remove(i);
         }
     }
-    
+
+    public void downloadGame(View view) {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.VIEW");
+        Uri url = Uri.parse("https://share-1309976108.cos.ap-guangzhou.myqcloud.com/kunkun.apk");
+        intent.setData(url);
+        startActivity(intent);
+    }
+
+    public void backToMain(View view) {
+        stopMusic(null);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
 }
+
